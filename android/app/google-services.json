@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34670410240",
+    "project_id": "notifications-app-bc01e",
+    "storage_bucket": "notifications-app-bc01e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34670410240:android:bf9e085e8226a622b236e5",
+        "android_client_info": {
+          "package_name": "com.josemartinez.push_notifications_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34670410240-6rphvp32bb37nf4jds9v9hrslruc7v0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYFFUVKWR9M4tk07Jv73yYwR_keTe4mPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34670410240-6rphvp32bb37nf4jds9v9hrslruc7v0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
