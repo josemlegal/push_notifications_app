@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:push_notifications_app/config/local_notifications/local_notifications.dart';
 import 'package:push_notifications_app/domain/entities/push_message.dart';
 import 'package:push_notifications_app/firebase_options.dart';
 
@@ -58,7 +59,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     print('FCM Token: $token');
   }
 
-  void _handleRemoteMessage(RemoteMessage message) {
+  void handleRemoteMessage(RemoteMessage message) {
     if (message.notification == null) return;
 
     final notification = PushMessage(
@@ -78,7 +79,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   void _onForegroundMessage() {
-    FirebaseMessaging.onMessage.listen(_handleRemoteMessage);
+    FirebaseMessaging.onMessage.listen(handleRemoteMessage);
   }
 
   void requestPermission() async {
@@ -91,6 +92,8 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       provisional: false,
       sound: true,
     );
+
+    await requestPermissionLocalNotifications();
 
     add(NotificationStatusChanged(settings.authorizationStatus));
   }
